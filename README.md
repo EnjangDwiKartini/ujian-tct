@@ -1,10 +1,10 @@
 # DOCKER FILE 
-===
+
 Dockerfile merupaka script yang berisi atau terdiri dari serangkaian perintah, intruksi (argumen) yang akan dieksekusi secara otomatisasi dan berurutan untuk membangun sebuah image. Docker images adalah sebuah template yang bersifat read only. Template ini sebenarnya adalah sebuah OS atau OS yang telah diinstall berbagai aplikasi. Docker images berfungsi untuk membuat docker container, dengan hanya 1 docker images kita dapat membuat banyak docker container. Jadi pada intinya Docker dapat membuat image secara otomatis dengan membaca instruksi dari Dockerfile. 
 
 ## Penggunaan Docker File 
 
-Perintah ~~~docker buid~~~  akan membangun image dari Docker File dan konteks. Yang dimaksud konteks disini adalah kumpulan file di PATH atau URL lokasi yang ditentukan. PATH adalah direktori pada sistem file lokal sedangkan URL adalah lokasi repositori Git.
+Perintah *docker buid*  akan membangun image dari Docker File dan konteks. Yang dimaksud konteks disini adalah kumpulan file di PATH atau URL lokasi yang ditentukan. PATH adalah direktori pada sistem file lokal sedangkan URL adalah lokasi repositori Git.
 Konteks diproses secara rekursif. Jadi, PATH menyertakan subdirektori dan URL menyertakan repositori dan submodulnya. Contoh ini menunjukkan perintah build yang menggunakan direktori saat ini sebagai konteks:
 ~~~
 $ docker build .
@@ -41,7 +41,7 @@ Error response from daemon: Unknown instruction: RUNCMD
 ~~~
 
 Docker daemon menjalankan instruksi di Dockerfile satu-per-satu, menghasilkan output dari setiap instruksi image baru , sebelum akhirnya mengeluarkan image ID baru. Daemon Docker akan secara otomatis membersihkan konteks yang dikirim.
-Setiap instruksi dijalankan secara independen, dan menyebabkan image baru dibuat sehingga ~~~ RUN cd / tmp~~~  tidak akan berpengaruh pada instruksi selanjutnya.
+Setiap instruksi dijalankan secara independen, dan menyebabkan image baru dibuat sehingga *RUN cd / tmp*  tidak akan berpengaruh pada instruksi selanjutnya.
 Docker akan menggunakan kembali  perantara image  (cache), untuk mempercepat proses docker build secara signifikan. Ini ditunjukkan oleh pesan Menggunakan cache di output konsol. 
 
 ~~~
